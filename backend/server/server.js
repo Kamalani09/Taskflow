@@ -10,13 +10,14 @@ const app = express();
 // Middleware
 // ======================
 app.use(express.json());
+// ======================
+// Middleware
+// ======================
+app.use(express.json());
+
 app.use(
   cors({
-    origin: [
-      "https://taskflow-one-kohl.vercel.app",
-      "https://taskflow-kamalanis-projects.vercel.app"
-    ],
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    origin: true,
     credentials: true
   })
 );
