@@ -5,7 +5,7 @@ import './App.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const API = 'http://localhost:5000/api';
+const API = 'https://taskflow-backend-vygd.onrender.com/api';
 
 // ── Icons (inline SVG to avoid extra deps) ──
 const Icon = {
