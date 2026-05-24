@@ -157,8 +157,9 @@ function TodoApp({ token, onLogout }) {
     } catch { toast.error('Failed to load tasks'); }
   };
 
-  useEffect(() => { fetchTodos(); }, []);
-
+useEffect(() => {
+  fetchTodos();
+}, [token]);
   // ── Add / Update ──
   const handleSubmit = async () => {
     if (!task.trim()) return toast.error('Task cannot be empty');
