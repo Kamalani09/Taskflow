@@ -149,13 +149,14 @@ function TodoApp({ token, onLogout }) {
   }, [dark]);
 
   const headers = { Authorization: token };
-
-  const fetchTodos = async () => {
-    try {
-      const res = await axios.get(`${API}/todos`, { headers });
-      setTodos(res.data);
-    } catch { toast.error('Failed to load tasks'); }
-  };
+const fetchTodos = React.useCallback(async () => {
+  try {
+    const res = await axios.get(`${API}/todos`, { headers });
+    setTodos(res.data);
+  } catch {
+    toast.error('Failed to load tasks');
+  }
+}, [token]);
 
 useEffect(() => {
   fetchTodos();
